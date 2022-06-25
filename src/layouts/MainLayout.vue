@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn
           flat
@@ -10,13 +10,16 @@
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
+
+      <div class=" q-px-lg q-pt-xl q-mb-md">
+        <div class="text-h3">Todo</div>
+        <div class="text-subtitle1"> {{todaysDate}}</div>
+      </div>
+      <q-img
+      src="~assets/montain.jpg"
+      class="header-image absolute-top"
+      />
     </q-header>
 
     <q-drawer
@@ -48,6 +51,7 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
+import { date } from 'quasar'
 
 const linksData = [
   {
@@ -102,6 +106,22 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: linksData
     }
+  },
+  computed :{
+    todaysDate() {
+      const timeStamp = Date.now()
+      return date.formatDate(timeStamp, 'ddd D MMMM')
+    }
   }
 }
 </script>
+
+<style lang="scss">
+  .header-image {
+    height: 100%;
+    z-index: -1;
+    opacity:0.4;
+    filter: grayscale(100%);
+  }
+
+</style>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quasar App (todo1)
 
 A Quasar Framework app
@@ -20,3 +21,7 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://v1.quasar.dev/quasar-cli/quasar-conf-js).
+=======
+# TodoApp
+Pequeno app feito com Quasar para registar itens.
+>>>>>>> b4540b1c16caaba0658db3e06384d144723fb1fb
