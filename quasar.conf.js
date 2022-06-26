@@ -8,6 +8,7 @@
 
 module.exports = function (/* ctx */) {
   return {
+		publicPath: process.env.NODE_ENV === "production" ? "/TodoApp/" : "/",
     // https://v1.quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
 
